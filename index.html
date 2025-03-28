@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +17,15 @@
                 
                 <h3>To Do List</h3>
                 
-                <div class="all-todos">
-                    <div class="single-todo done">
-                        <p>Learn HTML, CSS and Javascript</p>
+                <div v-for="todo in todos" class="all-todos">
+                    <div class="single-todo"
+                         @click="todo.done = !todo.done"
+                         :class="{ done: todo.done }">
+                        <p>{{ todo.description }}</p>
                     </div>
                 </div>
 
-                <button class="clear">Clear all</button>
+                <button class="clear" @click="clearAll()">Clear all</button>
 
                 <input type="text" placeholder="Write a new to-do...">
                 <button class="add">Add</button>
@@ -41,7 +41,7 @@
             </section>
 
         </main>
-        <script src="https://unpkg.com/vue@next"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="scripts.js"></script>
     </body>
 

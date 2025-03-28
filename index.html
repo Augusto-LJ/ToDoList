@@ -27,8 +27,10 @@
 
                 <button class="clear" @click="clearAll()">Clear all</button>
 
-                <input type="text" placeholder="Write a new to-do...">
-                <button class="add">Add</button>
+                <input  type="text"
+                        placeholder="Write a new to-do..."
+                        v-model="newTodo.description">
+                <button class="add" @click="addToDo()">Add</button>
 
                 <div class="instructions">
                     Instructions:
@@ -38,7 +40,7 @@
                         <li>Use the input filed to add new to-dos</li>
                     </ul>
                 </div>
-            </section>
+            </input>
 
         </main>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

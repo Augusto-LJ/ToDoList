@@ -17,11 +17,18 @@ const ToDoList = {
   data() {
     return {
       todos: window.todos,
+      newTodo: {},
     };
   },
   methods: {
     clearAll: function () {
       this.todos = [];
+    },
+    addToDo: function () {
+      if (this.newTodo.description) {
+        this.todos.push(this.newTodo);
+        this.newTodo = {};
+      }
     },
   },
 };
